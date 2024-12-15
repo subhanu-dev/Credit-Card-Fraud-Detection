@@ -1,8 +1,14 @@
 ## Credit Card Fraud Detection Model 💳
 
-
+Category: Data Analysis, Machine Learning
  
 
+**Tech Stack Used:**
+
+![Python](https://img.shields.io/badge/Python-FF6F00?style=for-the-badge&logo=python&logoColor=white)
+![PyCaret](https://img.shields.io/badge/PyCaret-1E2952?style=for-the-badge&logo=data:image/svg+xml;base64,PHRleHQgaGVyZT0nUGlXb3JrJyB2aWV3Qm94PSIwIDAgMzAgMzAiPjxwYXRoIGQ9Ik0xNS4wNy4wMjdDLjAxNy4wMzkuMDAxIDAuMDY1LjAwNSAwLjEzOE0uMTMgMTAuMDA3TDQuNTkgOS45OWw0LjQ1LTMuNTM3TDExLjc4IDguMDdsLTEuNTYgNC43NmwxLjYgNC43NiA1LjE5IDMuNTQgMi41OC0xLjkwOCAyLjU4LTEuOTA4LTguMTMgNi4xOEwxNS41MyAyNnoiIHN0eWxlPSJmaWxsOiNmZmZmZmYiLz48L3RleHQ+)
+![Seaborn](https://img.shields.io/badge/Seaborn-3775A9?style=for-the-badge&logo=databricks&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 
 
 **set up instructions**
@@ -25,4 +31,5 @@ input your params and a prediction would be made by the model to the screen.
 
 
 ---
+Made with ❤️ by [Subhanu](https://github.com/subhanu-dev)
 
