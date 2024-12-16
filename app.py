@@ -3,7 +3,7 @@ import pandas as pd
 from pycaret.classification import load_model, predict_model, setup
 
 # Loading the saved model
-model_file = "saved_model_1"  # didn't work when attempted with pickle
+model_file = "saved_model_1"  # didn't work when attempted with pickle. so models made with pycaret must also be loaded with pycaret itself
 model = load_model(model_file)
 
 
@@ -20,7 +20,8 @@ def make_prediction(data):
 
 
 # Streamlit UI
-st.title("Credit Card Fraud Detection Model 💳")
+st.title("Credit Card Fraud Detection Model")
+st.markdown("<br>", unsafe_allow_html=True)
 
 
 st.sidebar.header("Input Parameters")
@@ -54,7 +55,9 @@ v25 = st.sidebar.number_input("V25", value=0.135968)
 v26 = st.sidebar.number_input("V26", value=0.006929)
 v27 = st.sidebar.number_input("V27", value=-0.063157)
 v28 = st.sidebar.number_input("V28", value=0.029586)
-amount = st.sidebar.number_input("Transaction Amount", min_value=0.0, value=55.75)
+amount = st.sidebar.number_input("Transaction Amount", min_value=0.0, value=44.75)
+st.sidebar.markdown("<br>", unsafe_allow_html=True)
+st.sidebar.image("./Images/featureImp.png", use_container_width=True)
 
 # Create a DataFrame with the input data
 input_data = {
@@ -99,15 +102,15 @@ st.write(input_df)
 
 if st.button("Predict Fraud or Not"):
     prediction = make_prediction(input_df)
-    st.write("Prediction Results:")
+    st.markdown("#### Prediction Results")
     st.write(
         prediction[["prediction_label"]]
     )  # Adjust according to the correct column names for predictions
 
     if prediction["prediction_label"][0] == 1:
-        st.write("FRAUDULENT Transaction.")
+        st.write("🔴 FRAUDULENT Transaction.")
     else:
-        st.write("This transaction is non FRAUD.")
+        st.write("🟢 This transaction is non FRAUD.")
 
 
 data = {
