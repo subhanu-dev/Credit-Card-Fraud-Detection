@@ -6,9 +6,8 @@ from pycaret.classification import load_model, predict_model, setup
 model_file = "saved_model_1"  # didn't work when attempted with pickle. so models made with pycaret must also be loaded with pycaret itself
 model = load_model(model_file)
 
-
+# setting the same setting applied to the training data so we can apply same transformations to the input data for predictions
 training_data = pd.read_csv("./Data/creditcard.csv")
-
 setup(data=training_data, target="Class", session_id=123)
 
 
@@ -26,40 +25,41 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 st.sidebar.header("Input Parameters")
 
-time = st.sidebar.number_input("Time", min_value=0, value=10000)
-v1 = st.sidebar.number_input("V1", value=-0.095459)
-v2 = st.sidebar.number_input("V2", value=-0.237526)
-v3 = st.sidebar.number_input("V3", value=0.106145)
-v4 = st.sidebar.number_input("V4", value=-0.278178)
-v5 = st.sidebar.number_input("V5", value=0.437071)
-v6 = st.sidebar.number_input("V6", value=0.060357)
-v7 = st.sidebar.number_input("V7", value=0.133052)
-v8 = st.sidebar.number_input("V8", value=0.029633)
-v9 = st.sidebar.number_input("V9", value=-0.157134)
-v10 = st.sidebar.number_input("V10", value=-0.054302)
-v11 = st.sidebar.number_input("V11", value=0.124157)
-v12 = st.sidebar.number_input("V12", value=-0.038907)
-v13 = st.sidebar.number_input("V13", value=-0.282089)
-v14 = st.sidebar.number_input("V14", value=0.091447)
-v15 = st.sidebar.number_input("V15", value=-0.165314)
-v16 = st.sidebar.number_input("V16", value=0.058350)
-v17 = st.sidebar.number_input("V17", value=0.073775)
-v18 = st.sidebar.number_input("V18", value=0.029840)
-v19 = st.sidebar.number_input("V19", value=-0.087655)
-v20 = st.sidebar.number_input("V20", value=-0.169512)
-v21 = st.sidebar.number_input("V21", value=-0.020706)
-v22 = st.sidebar.number_input("V22", value=0.007763)
-v23 = st.sidebar.number_input("V23", value=-0.098381)
-v24 = st.sidebar.number_input("V24", value=-0.078027)
-v25 = st.sidebar.number_input("V25", value=0.135968)
-v26 = st.sidebar.number_input("V26", value=0.006929)
-v27 = st.sidebar.number_input("V27", value=-0.063157)
-v28 = st.sidebar.number_input("V28", value=0.029586)
-amount = st.sidebar.number_input("Transaction Amount", min_value=0.0, value=44.75)
+time = st.sidebar.number_input("Time", min_value=0.0, value=80450.513742)
+v1 = st.sidebar.number_input("V1", value=-4.498280)
+v2 = st.sidebar.number_input("V2", value=3.405965)
+v3 = st.sidebar.number_input("V3", value=-6.729599)
+v4 = st.sidebar.number_input("V4", value=4.472591)
+v5 = st.sidebar.number_input("V5", value=-2.957197)
+v6 = st.sidebar.number_input("V6", value=-1.432518)
+v7 = st.sidebar.number_input("V7", value=-5.175912)
+v8 = st.sidebar.number_input("V8", value=0.953255)
+v9 = st.sidebar.number_input("V9", value=-2.522124)
+v10 = st.sidebar.number_input("V10", value=-5.453274)
+v11 = st.sidebar.number_input("V11", value=3.716347)
+v12 = st.sidebar.number_input("V12", value=-6.103254)
+v13 = st.sidebar.number_input("V13", value=-0.094324)
+v14 = st.sidebar.number_input("V14", value=-6.835946)
+v15 = st.sidebar.number_input("V15", value=-0.072830)
+v16 = st.sidebar.number_input("V16", value=-4.000956)
+v17 = st.sidebar.number_input("V17", value=-6.463285)
+v18 = st.sidebar.number_input("V18", value=-2.157071)
+v19 = st.sidebar.number_input("V19", value=0.669143)
+v20 = st.sidebar.number_input("V20", value=0.405043)
+v21 = st.sidebar.number_input("V21", value=0.466550)
+v22 = st.sidebar.number_input("V22", value=0.086639)
+v23 = st.sidebar.number_input("V23", value=-0.096464)
+v24 = st.sidebar.number_input("V24", value=-0.106643)
+v25 = st.sidebar.number_input("V25", value=0.040615)
+v26 = st.sidebar.number_input("V26", value=0.050456)
+v27 = st.sidebar.number_input("V27", value=0.213774)
+v28 = st.sidebar.number_input("V28", value=0.078270)
+amount = st.sidebar.number_input("Transaction Amount", min_value=0.0, value=123.871860)
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.image("./Images/featureImp.png", use_container_width=True)
 
-# Create a DataFrame with the input data
+
+# parsing input data as a DataFrame
 input_data = {
     "Time": [time],
     "V1": [v1],
@@ -100,7 +100,7 @@ st.write("Input Data ->")
 st.write(input_df)
 
 
-if st.button("Predict Fraud or Not"):
+if st.button("Predict Fraud or Not 💳"):
     prediction = make_prediction(input_df)
     st.markdown("#### Prediction Results")
     st.write(
@@ -110,7 +110,7 @@ if st.button("Predict Fraud or Not"):
     if prediction["prediction_label"][0] == 1:
         st.write("🔴 FRAUDULENT Transaction.")
     else:
-        st.write("🟢 This transaction is non FRAUD.")
+        st.write("🟢 VALID Transaction. ")
 
 
 data = {
