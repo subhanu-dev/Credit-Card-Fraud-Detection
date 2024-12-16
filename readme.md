@@ -1,7 +1,8 @@
 ## Credit Card Fraud Detection Model 💳
 
 Category: Data Analysis, Machine Learning
- 
+
+![model-image](Images/deployment.png)
 
 **Tech Stack Used:**
 
