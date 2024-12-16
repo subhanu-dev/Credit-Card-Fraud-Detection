@@ -18,6 +18,9 @@ Then I used Streamlit to deploy the model and to build an interactive interface 
 ![Seaborn](https://img.shields.io/badge/Seaborn-3775A9?style=for-the-badge&logo=databricks&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 
+
+![model-image](Images/deployment_valid.png)
+
 ---
 #### **set up instructions**
 
