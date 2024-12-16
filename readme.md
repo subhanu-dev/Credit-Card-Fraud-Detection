@@ -7,7 +7,7 @@ Category: Data Analysis, Machine Learning
 The goal of this project was to identify fraudulent credit card transactions using a popular dataset in machine learning.  With 30 features of over 200,000 transactions, the dataset was heavily skewed as expected. 
 Regular pandas, matplotlib and seaborn was used for EDA and the duplicates were handled according to the results. A major observation was how transaction amounts were dispersed in a heavily right skewed pattern that distorted the true mean representations. Over 20,000 rows were removed in the outlier analysis with a distance of 3 * IQR above and below. (complete analysis steps are detailed in the notebook) 
 
-Another objective of mine was to try building a model with Auto ML libraries and see how these perform instead of using regular scikit-learn models. After doing some research, I have choosen pycaret as a customizable Auto ML library. <br> The binary classifier was to build several models and find the optimal one and Extra Trees classifier ensemble methods had the best overall performance.
+Another objective of mine was to try building a model with Auto ML libraries and see how these perform instead of using regular scikit-learn models. After doing some research, I have choosen pycaret as a customizable Auto ML library. <br> The binary classifier was to build several models and find the optimal one and Extra Trees classifier had the best overall performance.
 
 Then I used Streamlit to deploy the model and to build an interactive interface where we can insert our values and get predictions as to whether the transaction is a valid one or fraudulent. 
 
